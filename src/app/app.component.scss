@@ -1,0 +1,66 @@
+.wrap {
+    margin: 20px auto;
+    width: 800px;
+}
+
+.choose-panel {
+    margin: 0 auto 30px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+
+    &__element {
+        background-color: transparent;
+        font-size: 80px;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.result {
+
+    &__header {
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+
+        .element {
+            display: flex;
+            justify-content: center;
+
+            &__text {
+                margin-right: 10px;
+                font-size: 36px;
+            }
+
+            &__score {
+                font-size: 22px;
+                align-self: flex-end;
+                color: #6a6f72;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+
+        &:not(:last-of-type) {
+            margin-bottom: 20px;
+        }
+
+        .choice {
+            text-align: center;
+            font-size: 40px;
+            opacity: .5;
+            cursor: default;
+
+            &.winner {
+                opacity: 1;
+            }
+        }
+    }
+}

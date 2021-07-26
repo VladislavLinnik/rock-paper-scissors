@@ -1,0 +1,26 @@
+<div class="wrap">
+  <div class="choose-panel">
+    <button *ngFor="let variant of variants" 
+            class="choose-panel__element"
+            (click)="doSelection(variant.emoji)">{{variant.emoji}}</button>
+  </div>
+
+  <div class="result">
+    <div class="result__header">
+      <div class="element">
+        <div class="element__text">You</div>
+        <div class="element__score">{{userScore}}</div>
+      </div>
+      <div class="element">
+        <div class="element__text">Computer</div>
+        <div class="element__score">{{computerScore}}</div>
+      </div>
+    </div>
+    <div class="result__item" *ngFor="let result of result">
+      <div class="choice"
+          [class.winner]="result.winner === 'user' || result.winner  === 'nobody'">{{result.user}}</div>
+      <div class="choice"
+          [class.winner]="result.winner === 'computer' || result.winner === 'nobody'">{{result.computer}}</div>
+    </div>
+  </div>
+</div>
